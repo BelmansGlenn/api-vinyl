@@ -1,6 +1,6 @@
 <?php
 
-namespace Review;
+namespace App\Controller\Admin;
 
 use App\Entity\Review;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;

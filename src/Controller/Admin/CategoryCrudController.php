@@ -1,6 +1,6 @@
 <?php
 
-namespace CategoryController;
+namespace App\Controller\Admin;
 
 use App\Entity\Category;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;

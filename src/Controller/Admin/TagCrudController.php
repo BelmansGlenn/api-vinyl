@@ -1,6 +1,6 @@
 <?php
 
-namespace Tag;
+namespace App\Controller\Admin;
 
 use App\Entity\Tag;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;

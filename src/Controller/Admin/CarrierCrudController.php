@@ -1,6 +1,6 @@
 <?php
 
-namespace CarrierController;
+namespace App\Controller\Admin;
 
 use App\Entity\Carrier;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
