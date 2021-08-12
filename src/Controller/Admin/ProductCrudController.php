@@ -30,8 +30,8 @@ class ProductCrudController extends AbstractCrudController
             MoneyField::new('price')->setCurrency('EUR'),
             TextField::new('vignette'),
             TextField::new('song'),
-            AssociationField::new('tag'),
-            AssociationField::new('category')
+            AssociationField::new('tags'),
+            AssociationField::new('categories')
         ];
     }
 }
