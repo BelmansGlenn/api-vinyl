@@ -1,6 +1,6 @@
 <?php
 
-namespace AddressController;
+namespace App\Controller\Admin\AddressCrudController;
 
 use App\Entity\Address;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
