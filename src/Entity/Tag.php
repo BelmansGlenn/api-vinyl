@@ -27,7 +27,7 @@ class Tag
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Product::class, inversedBy="tags")
+     * @ORM\ManyToMany(targetEntity=Product::class, mappedBy="tags")
      */
     private $product;
 
@@ -75,5 +75,9 @@ class Tag
         $this->product->removeElement($product);
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->name;
     }
 }

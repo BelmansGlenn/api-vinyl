@@ -32,7 +32,7 @@ class Category
     private $image;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Product::class, inversedBy="categories")
+     * @ORM\ManyToMany(targetEntity=Product::class, mappedBy="categories")
      */
     private $product;
 
@@ -92,5 +92,9 @@ class Category
         $this->product->removeElement($product);
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->name;
     }
 }

@@ -71,6 +71,7 @@ class User
         $this->addresses = new ArrayCollection();
         $this->reviews = new ArrayCollection();
         $this->orders = new ArrayCollection();
+        $this->createdAt = new \DateTime();
     }
 
     public function getId(): ?int
@@ -238,5 +239,9 @@ class User
         }
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->email;
     }
 }

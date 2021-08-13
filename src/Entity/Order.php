@@ -55,6 +55,7 @@ class Order
     public function __construct()
     {
         $this->product = new ArrayCollection();
+        $this->createdAt = new \DateTime();
     }
 
     public function getId(): ?int
@@ -144,5 +145,9 @@ class Order
         $this->carrier = $carrier;
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->name;
     }
 }

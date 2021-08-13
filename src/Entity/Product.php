@@ -62,12 +62,12 @@ class Product
     private $reviews;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Category::class, mappedBy="product")
+     * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="product")
      */
     private $categories;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Tag::class, mappedBy="product")
+     * @ORM\ManyToMany(targetEntity=Tag::class, inversedBy="product")
      */
     private $tags;
 
@@ -294,5 +294,9 @@ class Product
         }
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->name;
     }
 }

@@ -25,7 +25,7 @@ class Address
     private $address;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $complement;
 
@@ -158,5 +158,9 @@ class Address
         $this->user = $user;
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->name;
     }
 }
