@@ -3,31 +3,30 @@ security:
   # enable_authenticator_manager: true
   # https://symfony.com/doc/current/security.html#c-hashing-passwords
   password_hashers:
-    #App\Entity\User:
-    #algorithm: auto
-    Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: "auto"
+    App\Entity\User:
+      algorithm: auto
+    #Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: "auto"
   # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
   providers:
     user:
       entity:
         class: App\Entity\User
-        property: "email"
+        property: email
   firewalls:
     dev:
       pattern: ^/(_(profiler|wdt)|css|images|js)/
       security: false
     login:
-      pattern: ^/api/login$
+      pattern: ^/api/login
       stateless: true
       anonymous: true
       json_login:
-        username_path: email
-        password_path: password
-        check_path: /api/login
+        check_path: /api/login_check
         success_handler: lexik_jwt_authentication.handler.authentication_success
         failure_handler: lexik_jwt_authentication.handler.authentication_failure
-    api:
-      pattern: ^/api
+    users:
+      pattern: ^/api/users
+      methods: [PUT, PATCH, DELETE]
       stateless: true
       guard:
         authenticators:
@@ -44,3 +43,5 @@ security:
   access_control:
     # - { path: ^/admin, roles: ROLE_ADMIN }
     # - { path: ^/profile, roles: ROLE_USER }
+    - { path: ^/api/users, roles: IS_AUTHENTICATED_FULLY, methods:[PUT, PATCH, DELETE] }
+    #- { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
