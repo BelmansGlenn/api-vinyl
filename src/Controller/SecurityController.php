@@ -52,4 +52,31 @@ class SecurityController extends ApiController
     {
         return new JsonResponse(['token' => $JWTManager->create($user)]);
     }
+
+    /**
+     * @Route("/api/users/{id}", name="users_update")
+     */
+    public function updateAccount(Request $request, UserPasswordEncoderInterface $encoder)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $request = $this->transformJsonBody($request);
+        $firstname = $request->get('firstname');
+        $lastname = $request->get('lastname');
+        $password = $request->get('password');
+        $email = $request->get('email');
+
+        if (empty($firstname) || empty($lastname) || empty($password) || empty($email)) {
+            return $this->respondValidationError("Invalid name or Password or Email");
+        }
+
+
+        $user = new User($email);
+        $user->setPassword($encoder->encodePassword($user, $password));
+        $user->setEmail($email);
+        $user->setFirstname($firstname);
+        $user->setLastname($lastname);
+        $em->persist($user);
+        $em->flush();
+        return $this->respondWithSuccess(sprintf('User %s successfully created', $user->getUsername()));
+    }
 }
