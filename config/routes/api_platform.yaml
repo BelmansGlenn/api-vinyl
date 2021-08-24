@@ -1,4 +1,8 @@
 api_platform:
-    resource: .
-    type: api_platform
-    prefix: /api
+  resource: .
+  type: api_platform
+  prefix: /api
+
+login:
+  path: /api/login
+  methods: ["POST"]
