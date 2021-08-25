@@ -17,7 +17,7 @@ use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 class SecurityController extends ApiController
 {
     /**
-     * @Route("/api/users", name="users")
+     * @Route("/api/users", name="users", methods={"POST"})
      */
     public function register(Request $request, UserPasswordEncoderInterface $encoder)
     {
