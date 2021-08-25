@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource(
- * collectionOperations{"get", "post"},
- * itemOperation{"get"},
+ * collectionOperations={"get", "post"},
+ * itemOperation={"get"},
  * )
  * @ORM\Entity(repositoryClass=CarrierRepository::class)
  */
