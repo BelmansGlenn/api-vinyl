@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ApiResource(
  * collectionOperations={"get", "post"},
- * itemOperation={"get"},
+ * itemOperations={"get"},
  * )
  * @ORM\Entity(repositoryClass=CarrierRepository::class)
  */
