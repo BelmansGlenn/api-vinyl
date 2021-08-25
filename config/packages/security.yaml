@@ -27,7 +27,7 @@ security:
         success_handler: lexik_jwt_authentication.handler.authentication_success
         failure_handler: lexik_jwt_authentication.handler.authentication_failure
     logout:
-        pattern: /logout$
+      pattern: /logout$
     users:
       pattern: ^/api/users
       methods: [PATCH, DELETE]
@@ -47,13 +47,13 @@ security:
   access_control:
     # - { path: ^/admin, roles: ROLE_ADMIN }
     # - { path: ^/profile, roles: ROLE_USER }
-    - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/api/addresses, roles: IS_AUTHENTICATED_FULLY }
-    - { path: ^/api/carriers, roles: IS_AUTHENTICATED_FULLY }
-    - { path: ^/api/categories, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/api/orders, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/api/products, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/api/reviews, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/api/tags, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/api/users, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods:[PATCH, DELETE] }
-    - { path: ^/api, roles: ROLE_ADMIN }
+    #- { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    #- { path: ^/api/addresses, roles: IS_AUTHENTICATED_FULLY }
+    #- { path: ^/api/carriers, roles: IS_AUTHENTICATED_FULLY }
+    #- { path: ^/api/categories, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    #- { path: ^/api/orders, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    #- { path: ^/api/products, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    #- { path: ^/api/reviews, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    #- { path: ^/api/tags, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    #- { path: ^/api/users, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods:[PATCH, DELETE] }
+    #- { path: ^/api, roles: ROLE_ADMIN }
