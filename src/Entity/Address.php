@@ -7,13 +7,7 @@ use App\Repository\AddressRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource(
- *   collectionOperations: [
- *       "get" => ["method" => "get"],
- *   ],
- *   itemOperations: [
- *       "get" => ["method" => "get"],
- *   ],)
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=AddressRepository::class)
  */
 class Address
