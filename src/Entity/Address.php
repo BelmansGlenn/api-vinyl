@@ -9,10 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ApiResource(
  *   collectionOperations: [
- *       'get' => ['method' => 'get'],
+ *       "get" => ["method" => "get"],
  *   ],
  *   itemOperations: [
- *       'get' => ['method' => 'get'],
+ *       "get" => ["method" => "get"],
  *   ],)
  * @ORM\Entity(repositoryClass=AddressRepository::class)
  */
