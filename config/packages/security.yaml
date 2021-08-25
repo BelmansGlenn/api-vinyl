@@ -55,6 +55,5 @@ security:
     - { path: ^/api/products, roles: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/api/reviews, roles: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/api/tags, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/api/users, roles: IS_AUTHENTICATED_FULLY, methods:[PATCH, DELETE] }
-    - { path: ^/api/users$, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods:[PATCH, DELETE] }
+    - { path: ^/api/users, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods:[PATCH, DELETE] }
     - { path: ^/api, roles: ROLE_ADMIN }
