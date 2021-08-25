@@ -14,7 +14,8 @@ use Doctrine\ORM\Mapping as ORM;
  *   ],
  *   itemOperations: [
  *       'get' => ['method' => 'get'],
- *   ],)
+ *   ]
+ * )
  * @ORM\Entity(repositoryClass=AddressRepository::class)
  */
 class Address
