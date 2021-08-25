@@ -52,4 +52,13 @@ class SecurityController extends ApiController
     {
         return new JsonResponse(['token' => $JWTManager->create($user)]);
     }
+
+    /**
+     * @Route("/logout", name="app_logout", methods={"GET"})
+     */
+    public function logout(): void
+    {
+        // controller can be blank: it will never be executed!
+        throw new \Exception('Don\'t forget to activate logout in security.yaml');
+    }
 }
